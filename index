@@ -1,1 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Weather Outlook</title>
+</head>
 
+<body>
+    <div class="container-main">
+        <!--Header-->
+        <div class="row">
+    <header class="head">
+        <h1>Weather Outlook</h1>
+    </header>
+        <!--Main Dash-->
+    <div class="row searchCity">
+        <!--Search/Sidebar-->
+        <div>
+            <!--Card Body-->
+            <div class="row">
+                <!--Header search for city-->
+                <h5>Search a City</h5>
+            </div>
+          
+            <div>
+                  <!--Text entry Box-->
+                <form>
+                    <!--Form El container-->
+                    <div>
+                        <label>
+                            <!--Insert location img or nav img-->
+                            <i class="">
+                            </i>
+                            Search City:
+                        </label>
+                        <!--User Input a city-->
+                        <input type="text" class="" id="city-search" placeholder="Enter a City">
+                    </div>
+                     <!--Search button-->
+                <button type="submit" id="searchBtn" class="btn">Search</button>
+                </form>
+                <form id="local-search" class="search-history">
+                    <!-- localStorage search results-->
+                </form>
+            </div>
+        </div>    
+    </div>
+        <!--API Display for weather-->
+        <div>
+            <!--container-->
+            <div>
+                <!--Card Body-->
+                <div>
+                    <!--Forcast section-->
+                    <div>
+                        <!--City and Date-->
+                        <div>
+                              <!--weather stats-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!--Lower row container-->
+    <div class="row">
+        <!--Weekly Forecast container-->
+        <div>
+            <!--Weekly Forecast Title Text-->
+            <div>
+                <!--Card container-->
+                <div>
+                    <!--Card Header-->
+                    <h5>Weekly Forcast</h5>
+                </div>
+                <!--Card container-->
+                <div>
+                    <!--Weekly Forcast cards-->
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
