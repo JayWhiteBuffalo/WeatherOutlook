@@ -1,29 +1,49 @@
+
+
+.container-main{
+    display: flexbox;
+    flex-direction: column;
+
+
+}
+
+
 .row {
     display: flex;
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px;
     flex-direction: column;
+    border: 1px solid black;
 }
-.head{
+.header-row{
+    background-color: blue;
+    background-image: linear-gradient(to right, #0052b0 ,#900be9); ;
+    border: 1px solid black;
+    margin: 10px;
     position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding: .5rem 1rem;
+    text-align: center;
+    
 }
+.header-row h1{
+    color:#fff
+}
+
 .border{
     border: 1px solid black;
 }
 .searchCity{
     position: relative;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 20px;
+    flex: 1;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     padding: .5rem 1rem;
-    border: 1px solid black;
+  
+    margin-left: .5rem;
 }
 .btn{
     display: inline-block;
@@ -37,4 +57,44 @@
     font-size: 1rem;
     line-height: 1.5;
     border-radius: .25rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+.searchCityCard{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border-bottom: 1px solid black;
+    border-radius: .25rem;
+    flex: 100%;
+    max-width: 100%;
+    margin: 10px;
+
+
+}
+#searchForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.apiContainer{
+    display:flex;
+    position: relative;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;  
+    list-style: none;
+    padding: 15px;
+    height: calc(100% - 50px);
+    background: rgb(196, 196, 196);
+    border-radius: 12px;
+    border: 2px solid var(--grey); 
+    justify-content: center;
+    align-items: center;
+    margin-left: 100px;
+
 }
