@@ -12,6 +12,19 @@ const handleSubmit = (e) => {
   let cityInput = document.getElementById('city-search').value
   currentWeather(cityInput);
 }
+
+//popurlate page function
+function populateSearch(response) {
+  console.log(response);
+  let cityTitle = response.name;
+  let cityTemp = response.main.temp;
+  let cityWind = response.wind.speed;
+  let cityHumidity = response.main.humidity;
+  document.getElementById('city-title').innerHTML = cityTitle;
+  document.getElementById('city-temp').innerHTML = cityTemp;
+  document.getElementById('city-wind').innerHTML = cityWind;
+  document.getElementById('city-humidity').innerHTML = cityHumidity;
+};
 //Get current weather
 function currentWeather(cityInput) {
   const apiCurrentUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&units=imperial&appid=f94d7942393e88c574f5bb107287fd0f`;
@@ -19,10 +32,10 @@ function currentWeather(cityInput) {
       url: apiCurrentUrl,
       method: "GET"
   }).then(function (response) {
-    console.log(response);
+    populateSearch(response);
+})};
 
-  })
-}
+
 
 
 
