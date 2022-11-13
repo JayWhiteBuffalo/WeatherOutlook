@@ -101,12 +101,20 @@
     height: fit-content;
 }
 #forcastContainer{
+    flex-direction: column;
     border: 1px solid black;
     display: flex;
     height: 100%;
     width: 90%;
     justify-self: center;
-    display: inline;
+}
+
+.card-container{
+    flex-direction: row;
+    display: flex;
+    height: 100%;
+    width: 90%;
+    justify-self: center;
 }
 .forecast-card{
     border: 1px solid black;
@@ -114,7 +122,7 @@
     color: white;
     width: fit-content;
     height: fit-content;
-    margin: 1rem;
+    margin: .5rem;
     padding: 1rem;
 }
 .btn:hover{
