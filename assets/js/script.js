@@ -47,11 +47,12 @@ function weatherForcast(response) {
 
   const forcastCall = `https://api.openweathermap.org/data/3.0/onecall?lat=`+lat+`&lon=`+lon+`&units=imperial&appid=f94d7942393e88c574f5bb107287fd0f`;
   fetch(forcastCall)
-      .then((response) => {
-        return response.json()
+      .then((data) => {
+        return data.json()
       })
       .then((data) =>{
-          pop5daycards(data)});
+          pop5daycards(data)}
+          );
   
 };
 
@@ -67,15 +68,19 @@ function pop5daycards(data) {
     let cardInfo = document.createElement('div');
         cardInfo.classList.add('forecast-info');
     let cardTemp = document.createElement('p');
-        cardTemp.innerText = ("High Temp :" + data.daily[i].temp.max);
+        cardTemp.innerText = ("Temp : " + data.daily[i].temp.max) + " *F";
     let cardWind = document.createElement('p');
-        cardWind.innerText = ("Wind : " + data.daily[i].wind_speed + "MPH");
+        cardWind.innerText = ("Wind : " + data.daily[i].wind_speed + " MPH");
     let cardHumid = document.createElement('p');
-        cardHumid.nnerText = ("Humidity : " + data.daily[i].humidity);
+        cardHumid.innerText = ("Humidity : " + data.daily[i].humidity + " %");
 
     card.append(cardDate,cardInfo,cardTemp,cardWind,cardHumid);
     let container = document.getElementById('card-container');
-    container.appendChild(card);
+    // Function was running twice so this was put in to prevent additional cards
+    let numberOfCards = container.getElementsByTagName('*').length;
+    if (numberOfCards < 30)
+    {container.appendChild(card)}
+    else {break};
   }
 };
 
