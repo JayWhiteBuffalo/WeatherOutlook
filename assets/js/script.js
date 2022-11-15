@@ -11,6 +11,7 @@ const handleSubmit = (e) => {
   e.preventDefault();
   let cityInput = document.getElementById('city-search').value
   currentWeather(cityInput);
+  savedSeaches(cityInput);
 }
 
 //
@@ -22,11 +23,14 @@ function populateSearch(response) {
   let cityTemp = response.main.temp;
   let cityWind = response.wind.speed;
   let cityHumidity = response.main.humidity;
-  let weatherImg = response.weather.main;
+  let icon = response.weather[0].icon;
+  let weatherIcon = `http://openweathermap.org/img/w/${icon}.png`;
+  let iconEl = $(`<img src= "${weatherIcon}" alt="weather icon"></img>`);
   document.getElementById('city-title').innerHTML = cityTitle;
   document.getElementById('city-temp').innerHTML = "Temperature : " + cityTemp + " *F";
   document.getElementById('city-wind').innerHTML = "Wind : " + cityWind + " mph";
   document.getElementById('city-humidity').innerHTML = "Humidity : " + cityHumidity + " %";
+  $("#searchCity").append(iconEl);
   weatherForcast(response);
 };
 //Get current weather
@@ -37,8 +41,19 @@ function currentWeather(cityInput) {
       method: "GET"
   }).then(function (response) {
     populateSearch(response);
+  }).then (function (response){
+    localStorage.setItem(cityInput, JSON.stringify(response))
   })
 };
+
+//Create Seach history button
+function savedSeaches(cityInput) {
+  let savedBtn = document.createElement('btn');
+      savedBtn.setAttribute('type', 'click');
+      savedBtn.setAttribute('onclick', currentWeather(cityInput));
+      savedBtn.classList.add('btn');
+  document.getElementById("savedSeach").append(savedBtn);
+}
 
 //Get 5 Day Forcast
 function weatherForcast(response) {

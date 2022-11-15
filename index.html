@@ -41,11 +41,12 @@
                 </div>  
             <!--Main Dash-->
             <div class="container col-12">
-                <div class="searchCity">
+                <div id = "searchCity" class="searchCity">
                     <h2 id = "city-title">Your City here</h2>
                 </div>
                 <div id="weather-results">
-                    <!--basic weather results--> 
+                    <!--basic weather results-->
+                    <img id = "city-icon"></img>
                     <p id = "city-temp">Temperature : 111</p>
                     <p id = "city-wind">Wind: 78mph</p>
                     <p id = "city-humidity">Humidity : 78%</p>
@@ -55,6 +56,9 @@
             <div class="apiContainer col-12">
                 <div>
                     <h2>5 Day Forecast</h2>
+                </div>
+                <div id="savedSeach">
+                    <!--Seach buttons append here-->
                 </div>
             </div>
             <div id="forcastContainer">
@@ -67,6 +71,7 @@
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
