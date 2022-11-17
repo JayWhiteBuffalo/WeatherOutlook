@@ -62,6 +62,21 @@
     width: 100%;
     margin-top: 1rem;
 }
+.historybtn{
+    display: inline-block;
+    font-weight: 400;
+    background-color: #0052b0;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid black;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    width: 100%;
+    margin-top: 1rem;
+}
 .searchCityCard{
     position: relative;
     display: flex;
@@ -128,5 +143,8 @@
     padding: 1rem;
 }
 .btn:hover{
+    opacity: .5;
+}
+.historybtn:hover{
     opacity: .5;
 }
