@@ -16,4 +16,4 @@ As a traveler, I want tot see the weather outlook for multiple cities so that I 
 If you have questions, email me at [JayWhiteBuffalo@protonmail.com](mailto:JayWhiteBuffalo@protonmail.com) or reach out on [GitHub](https://www.github.com/JayWhiteBuffalo)
 
 ## Screenshot
-![Screenshot of weather app](assets/img/screenshot.png)
+![Screenshot of weather app](./assets/images/Screenshot%20(14).png)
