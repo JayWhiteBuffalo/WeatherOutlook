@@ -1,6 +1,6 @@
 # WeatherOutlook
 
-https://vanessalane.github.io/weather-dashboard/
+https://github.com/JayWhiteBuffalo/WeatherOutlook/
 
 ## Description
 A vanilla JS app to check the current weather and forecast.
