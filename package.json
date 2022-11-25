@@ -1,0 +1,22 @@
+{
+  "name": "weatheroutlook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JayWhiteBuffalo/WeatherOutlook.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JayWhiteBuffalo/WeatherOutlook/issues"
+  },
+  "homepage": "https://github.com/JayWhiteBuffalo/WeatherOutlook#readme",
+  "dependencies": {
+    "moment": "^2.29.4"
+  }
+}

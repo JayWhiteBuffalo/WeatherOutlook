@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="./assets/style.css">
     <title>Weather Outlook</title>
 </head>
@@ -29,7 +30,7 @@
                         <!--User Input a city-->
                         <input type="text" class="" id="city-search" placeholder="Enter a City">
                         <!--Search button-->
-                        <button type="submit" id="searchBtn" class="btn">Search</button>
+                        <button id="searchBtn" class="btn">Search</button>
                         </form>
                     </div>
                     <div>
@@ -40,14 +41,15 @@
                 </div>  
             <!--Main Dash-->
             <div class="container col-12">
-                <div class="searchCity">
-                    <h2>Zion National Park</h2>
+                <div id = "searchCity" class="searchCity">
+                    <h2 id = "city-title">Your City here</h2>
                 </div>
                 <div id="weather-results">
-                    <!--basic weather results--> 
-                    <p>Temperature : 111</p>
-                    <p>Wind: 78mph</p>
-                    <p>Humidity : 78%</p>
+                    <!--basic weather results-->
+                    <img id = "city-icon"></img>
+                    <p id = "city-temp">Temperature : 111</p>
+                    <p id = "city-wind">Wind: 78mph</p>
+                    <p id = "city-humidity">Humidity : 78%</p>
                 </div>
             </div> 
             <!--API Display for weather-->
@@ -55,30 +57,22 @@
                 <div>
                     <h2>5 Day Forecast</h2>
                 </div>
+                <div id="savedSeach">
+                    <!--Seach buttons append here-->
+                </div>
             </div>
             <div id="forcastContainer">
-                <div>
+                <div class = "searchCity">
                     <h2>5 Day Forecast:</h2>
                 </div>
-                <div class="card-container">
-                    <div class="forecast-card">
-                        <div class="forecast-date">
-                            <p>August 24, 1991</p>
-                        </div>
-                        <div class="forecast-img">
-                            <p>Sunny img</p>
-                        </div>
-                        <div class="forecast-info">
-                            <p>Temperature: 67*F</p>
-                            <p>Wind: 55 MPH</p>
-                            <p>Humidity: 22%</p>
-                        </div>
-                    </div>
+                <div id="card-container" class="card-container">   
                 </div>
             </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
