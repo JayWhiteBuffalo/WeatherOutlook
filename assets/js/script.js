@@ -1,6 +1,7 @@
 
 const searchBtn = document.getElementById('searchBtn');
 const historyBtn = document.getElementsByClassName('historybtn');
+let cityInput = document.getElementById('city-search').value
 //const city = cityInput.val().trim();
 //const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=f94d7942393e88c574f5bb107287fd0f`;
 let searchHistoryArr = [];
@@ -20,10 +21,8 @@ const handleSubmit = (e) => {
 //populate page function
 function populateSearch(response) {
   //removes previous weather img tag
-  $(document).ready(function() {
-    $('#cityIcon').siblings('img').remove();
-}); 
-  //console.log(response);
+
+  console.log(response);
   let cityTitle = response.name;
   let cityTemp = response.main.temp;
   let cityWind = response.wind.speed;
@@ -51,9 +50,11 @@ function currentWeather(cityInput) {
   
 };
 
+
 //Create Seach history button
 function savedSeaches(cityInput) {
   let savedBtn = document.createElement('btn');
+      savedBtn.setAttribute('id', cityInput);
       savedBtn.setAttribute('type', 'click');
       //savedBtn.setAttribute('onclick', currentWeather(cityInput));
       savedBtn.classList.add('historybtn');
@@ -61,6 +62,7 @@ function savedSeaches(cityInput) {
       savedBtn.onclick = historyHandle;
   document.getElementById("savedSeach").append(savedBtn);
 }
+
 
 //Get 5 Day Forcast
 function weatherForcast(response) {
@@ -85,13 +87,12 @@ function clearCards(){
 }; 
 
 
+
 function pop5daycards(data) {
-  console.log(data)
   for (let i =1; i < data.daily.length; i++) {
     if(i === 6) {break;}
     let unixTime =  (data.daily[i].dt)
     let day = new Date(unixTime * 1000).toLocaleDateString("en-US")
-    console.log(day)
     let card = document.createElement('div');
         card.classList.add('forecast-card');
     let cardDate = document.createElement('b');
@@ -101,7 +102,6 @@ function pop5daycards(data) {
     let weatherIcon = `http://openweathermap.org/img/w/${icon}.png`;
     let iconEl = document.createElement('img');
         iconEl.setAttribute('src', weatherIcon)
-    //let iconEl = $(`<img src= "${weatherIcon}" alt="weather icon"></img>`);
     let cardInfo = document.createElement('div');
         cardInfo.classList.add('forecast-info');
     let cardTemp = document.createElement('p');
